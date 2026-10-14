@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sibtain Khan | Graphic Designer & Video Editor</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#ec4899',
+                            dark: '#db2777',
+                            light: '#f472b6'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand selection:text-white">
+
+    <!-- NAVIGATION BAR -->
+    <header class="fixed top-0 left-0 w-full bg-slate-950/90 backdrop-blur-md shadow-lg z-50 transition-all border-b border-slate-800/80" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand to-purple-500 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-brand/30 group-hover:scale-105 transition-transform">
+                        SK
+                    </div>
+                    <span class="text-xl font-bold tracking-tight text-white">Sibtain<span class="text-brand">Media</span></span>
+                </a>
+
+                <!-- Desktop Links -->
+                <nav class="hidden md:flex items-center gap-8 font-medium text-slate-300 text-sm">
+                    <a href="#home" class="hover:text-brand-light transition-colors">Home</a>
+                    <a href="#about" class="hover:text-brand-light transition-colors">About</a>
+                    <a href="#skills" class="hover:text-brand-light transition-colors">Skills</a>
+                    <a href="#projects" class="hover:text-brand-light transition-colors">Projects</a>
+                    <a href="#pricing" class="hover:text-brand-light transition-colors">Pricing</a>
+                    <a href="#contact" class="hover:text-brand-light transition-colors">Contact</a>
+                </nav>
+
+                <!-- Hire Me CTA Button -->
+                <div class="hidden md:block">
+                    <button onclick="openHireModal('General Project Hire')" class="px-6 py-2.5 rounded-xl bg-brand text-white font-semibold shadow-lg shadow-brand/20 hover:bg-brand-dark transition-all transform hover:-translate-y-0.5 inline-flex items-center gap-2 text-sm">
+                        <i class="fa-solid fa-briefcase text-sm"></i> Hire Me ($15/hr)
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-slate-300 hover:text-white focus:outline-none text-2xl">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800 px-4 pt-4 pb-6 space-y-3 shadow-xl">
+            <a href="#home" class="block text-slate-300 font-medium py-2 mobile-link">Home</a>
+            <a href="#about" class="block text-slate-300 font-medium py-2 mobile-link">About</a>
+            <a href="#skills" class="block text-slate-300 font-medium py-2 mobile-link">Skills</a>
+            <a href="#projects" class="block text-slate-300 font-medium py-2 mobile-link">Projects</a>
+            <a href="#pricing" class="block text-slate-300 font-medium py-2 mobile-link">Pricing</a>
+            <a href="#contact" class="block text-slate-300 font-medium py-2 mobile-link">Contact</a>
+            <div class="pt-2">
+                <button onclick="openHireModal('General Project Hire')" class="block text-center w-full py-3 rounded-xl bg-brand text-white font-semibold shadow-md">
+                    <i class="fa-solid fa-briefcase mr-1"></i> Hire Me ($15/hr)
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative pt-32 pb-20 md:pt-48 md:pb-32 bg-slate-950 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                
+                <!-- Left Content -->
+                <div class="space-y-6 text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand/10 border border-brand/20 text-brand-light text-sm font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Available for Freelance Projects
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
+                        Creative <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand via-purple-400 to-pink-300">Graphic Designer</span> & Video Editor
+                    </h1>
+                    <p class="text-lg text-slate-400 max-w-xl mx-auto md:mx-0 leading-relaxed">
+                        I create stunning visual graphics, brand logos, social media posts, and high-engaging video edits (Reels, Shorts & Promotional Videos).
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-2">
+                        <button onclick="openHireModal('Hero Direct Hire')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand text-white font-semibold shadow-xl shadow-brand/25 hover:bg-brand-dark transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Hire Me Now
+                        </button>
+                        <a href="#pricing" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900 text-slate-200 font-semibold border border-slate-800 hover:bg-slate-800 transition-all text-center">
+                            View Pricing Plans
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Profile / Showcase Graphic -->
+                <div class="relative flex justify-center">
+                    <div class="absolute -inset-2 bg-gradient-to-r from-brand to-purple-600 rounded-3xl blur-2xl opacity-30 animate-pulse"></div>
+                    <div class="relative w-full max-w-md rounded-3xl overflow-hidden border-2 border-slate-800 bg-slate-900 p-4 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" alt="Video Editing Workstation" class="w-full h-80 object-cover rounded-2xl">
+                        <div class="mt-4 p-4 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Rate Starting At</h4>
+                                <p class="text-xs text-slate-400">$15/hr or $100/project</p>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-brand/20 text-brand-light text-xs font-bold">100% Quality Guaranteed</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION (Updated Professional Photo) -->
+    <section id="about" class="py-24 bg-slate-900/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Professional Studio Workstation" class="rounded-3xl shadow-2xl border border-slate-800 w-full h-[380px] object-cover">
+                </div>
+                <div class="space-y-6">
+                    <span class="text-brand font-semibold text-sm uppercase tracking-wider">About Me</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">I Bring Graphics & Videos To Life</h2>
+                    <p class="text-slate-300 leading-relaxed">
+                        Hi, I'm <strong class="text-white">Sibtain Khan</strong>. I am a passionate Graphic Designer & Professional Video Editor. I help brands and creators grow by designing impactful visual graphics and editing engaging videos, YouTube reels, and ads.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800">
+                            <h3 class="text-2xl font-black text-brand">$15 / Hour</h3>
+                            <p class="text-xs text-slate-400 mt-1">Flexible Hourly Work</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800">
+                            <h3 class="text-2xl font-black text-emerald-400">$100 / Project</h3>
+                            <p class="text-xs text-slate-400 mt-1">Full Fixed Project Package</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="py-24 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-brand font-semibold text-sm uppercase tracking-wider">Design & Editing Tools</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Skills & Software</h2>
+                <p class="text-slate-400">Tools I use to create graphics and edit videos.</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-brand text-center transition-all group">
+                    <i class="fa-solid fa-paintbrush text-4xl text-blue-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-white">Photoshop</h3>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-brand text-center transition-all group">
+                    <i class="fa-solid fa-pen-nib text-4xl text-orange-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-white">Illustrator</h3>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-brand text-center transition-all group">
+                    <i class="fa-solid fa-crown text-4xl text-cyan-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-white">Canva Pro</h3>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-brand text-center transition-all group">
+                    <i class="fa-solid fa-bullhorn text-4xl text-emerald-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-white">Brand Identity</h3>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-brand text-center transition-all group">
+                    <i class="fa-solid fa-film text-4xl text-purple-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-white">Premiere Pro</h3>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-brand text-center transition-all group">
+                    <i class="fa-solid fa-clapperboard text-4xl text-pink-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-white">After Effects</h3>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-brand text-center transition-all group">
+                    <i class="fa-solid fa-video text-4xl text-red-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-white">Reels & Shorts Edit</h3>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-brand text-center transition-all group">
+                    <i class="fa-solid fa-wand-magic-sparkles text-4xl text-yellow-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-white">Motion Graphics</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="py-24 bg-slate-900/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-brand font-semibold text-sm uppercase tracking-wider">Portfolio Showcase</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Featured Projects</h2>
+                <p class="text-slate-400">Explore some of my high-quality graphics and video editing work.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="rounded-3xl bg-slate-900 border border-slate-800 overflow-hidden group hover:border-brand transition-all shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=600&q=80" alt="Logo Design" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="p-6 space-y-3">
+                        <span class="text-xs font-bold text-brand uppercase tracking-wider">Branding</span>
+                        <h3 class="text-xl font-bold text-white">Modern Brand Logo Design</h3>
+                        <p class="text-slate-400 text-sm">Minimalist vector logo suite created for business branding.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="rounded-3xl bg-slate-900 border border-slate-800 overflow-hidden group hover:border-brand transition-all shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80" alt="Social Media Graphics" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="p-6 space-y-3">
+                        <span class="text-xs font-bold text-brand uppercase tracking-wider">Social Media</span>
+                        <h3 class="text-xl font-bold text-white">Social Media Post Designs</h3>
+                        <p class="text-slate-400 text-sm">High-converting social media marketing templates and banners.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="rounded-3xl bg-slate-900 border border-slate-800 overflow-hidden group hover:border-brand transition-all shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=600&q=80" alt="Video Editing" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="p-6 space-y-3">
+                        <span class="text-xs font-bold text-purple-400 uppercase tracking-wider">Video Editing</span>
+                        <h3 class="text-xl font-bold text-white">Reels & Promo Video Editing</h3>
+                        <p class="text-slate-400 text-sm">Engaging video edits with motion text, sound effects, and transitions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="pricing" class="py-24 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-brand font-semibold text-sm uppercase tracking-wider">Simple & Transparent</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Hire Me Pricing</h2>
+                <p class="text-slate-400">Choose the best working model that suits your project budget.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Hourly Plan -->
+                <div class="p-8 rounded-3xl bg-slate-900 border border-slate-800 hover:border-brand transition-all relative flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <span class="px-4 py-1.5 rounded-full bg-brand/10 text-brand-light text-xs font-bold inline-block">Flexible Rate</span>
+                        <h3 class="text-2xl font-bold text-white">Hourly Basis</h3>
+                        <div class="text-4xl font-black text-white">$15 <span class="text-lg font-normal text-slate-400">/ Hour</span></div>
+                        <p class="text-slate-400 text-sm">Ideal for quick video edits, graphic tweaks, or ongoing daily tasks.</p>
+                        <ul class="space-y-3 text-slate-300 text-sm pt-4">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand"></i> Direct Communication</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand"></i> All Source Files Included</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand"></i> Quick Turnaround Time</li>
+                        </ul>
+                    </div>
+                    <div class="pt-8">
+                        <button onclick="openHireModal('Hourly Plan ($15/hr)')" class="block text-center w-full py-4 rounded-xl bg-brand text-white font-semibold shadow-lg shadow-brand/25 hover:bg-brand-dark transition-all">
+                            Hire Hourly ($15/hr)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Per Project Plan -->
+                <div class="p-8 rounded-3xl bg-slate-900 border-2 border-emerald-500/80 transition-all relative flex flex-col justify-between shadow-2xl shadow-emerald-500/10">
+                    <div class="space-y-4">
+                        <span class="px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold inline-block">Best Value</span>
+                        <h3 class="text-2xl font-bold text-white">Complete Project</h3>
+                        <div class="text-4xl font-black text-white">$100 <span class="text-lg font-normal text-slate-400">/ Project</span></div>
+                        <p class="text-slate-400 text-sm">Perfect for full brand identity packages or complete promotional video campaigns.</p>
+                        <ul class="space-y-3 text-slate-300 text-sm pt-4">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> Full Brand Kit or Full Video Edit Package</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> High Resolution Rendered Files</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> Commercial Usage Rights Included</li>
+                        </ul>
+                    </div>
+                    <div class="pt-8">
+                        <button onclick="openHireModal('Full Project Package ($100)')" class="block text-center w-full py-4 rounded-xl bg-emerald-500 text-white font-semibold shadow-lg shadow-emerald-500/25 hover:bg-emerald-600 transition-all">
+                            Order Full Project ($100)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 bg-slate-900/60">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+            <span class="text-brand font-semibold text-sm uppercase tracking-wider">Let's Connect</span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Have a Design or Video Project?</h2>
+            <p class="text-slate-300 max-w-2xl mx-auto">
+                Select your preferred way to contact me for immediate discussion.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto text-left pt-4">
+                <!-- Direct WhatsApp Box -->
+                <a href="https://wa.me/923128683351?text=Hi%20Sibtain,%20I%20want%20to%20discuss%20a%20project." target="_blank" class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500 transition-all flex items-center gap-4 group">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-3xl font-bold shrink-0">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-white">WhatsApp Direct</h4>
+                        <p class="text-emerald-400 text-sm font-semibold">+92 312 8683351</p>
+                    </div>
+                </a>
+
+                <!-- Email Box -->
+                <a href="mailto:khansibtain036@gmail.com?subject=Inquiry%20for%20Graphic%20and%20Video%20Services&body=Hi%20Sibtain,%20I%20would%20like%20to%20hire%20you." class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-brand transition-all flex items-center gap-4 group">
+                    <div class="w-14 h-14 rounded-2xl bg-brand/20 text-brand-light flex items-center justify-center text-2xl font-bold shrink-0">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-white">Gmail / Email</h4>
+                        <p class="text-brand-light text-xs font-semibold">khansibtain036@gmail.com</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 py-8 border-t border-slate-800 text-center text-slate-500 text-sm">
+        <p>&copy; 2026 Sibtain Khan - Graphic Designer & Video Editor. All rights reserved.</p>
+    </footer>
+
+    <!-- INTERACTIVE HIRE SELECTION MODAL (POPUP) -->
+    <div id="hireModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 max-w-md w-full relative shadow-2xl space-y-6">
+            <!-- Close Button -->
+            <button onclick="closeHireModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center space-y-2">
+                <div class="w-14 h-14 rounded-2xl bg-brand/20 text-brand flex items-center justify-center text-2xl font-bold mx-auto">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+                <h3 class="text-2xl font-black text-white">Choose How To Connect</h3>
+                <p class="text-slate-400 text-sm" id="modalPlanText">Select your preferred method to proceed with hiring.</p>
+            </div>
+
+            <!-- Options -->
+            <div class="space-y-4">
+                <!-- Option 1: WhatsApp -->
+                <a id="modalWhatsappBtn" href="#" target="_blank" class="flex items-center justify-between p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 hover:bg-emerald-500/20 transition-all text-emerald-400 font-bold group">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <span>Contact via WhatsApp</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-sm group-hover:translate-x-1 transition-transform"></i>
+                </a>
+
+                <!-- Option 2: Gmail / Email -->
+                <a id="modalEmailBtn" href="#" class="flex items-center justify-between p-4 rounded-2xl bg-brand/10 border border-brand/30 hover:bg-brand/20 transition-all text-brand-light font-bold group">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-envelope text-2xl"></i>
+                        <span>Contact via Gmail / Email</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-sm group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Hire Modal Popup Logic
+        const hireModal = document.getElementById('hireModal');
+        const modalWhatsappBtn = document.getElementById('modalWhatsappBtn');
+        const modalEmailBtn = document.getElementById('modalEmailBtn');
+        const modalPlanText = document.getElementById('modalPlanText');
+
+        function openHireModal(planName) {
+            modalPlanText.innerText = "Selected Plan: " + planName;
+
+            // Set custom WhatsApp & Email URLs based on selection
+            const encodedPlan = encodeURIComponent(planName);
+            
+            modalWhatsappBtn.href = "https://wa.me/923128683351?text=" + encodeURIComponent("Hi Sibtain, I am interested in hiring you for: " + planName);
+            modalEmailBtn.href = "mailto:khansibtain036@gmail.com?subject=" + encodeURIComponent("Hiring Inquiry - " + planName) + "&body=" + encodeURIComponent("Hi Sibtain,\n\nI saw your portfolio and would like to hire you for " + planName + ".\n\nPlease reply to discuss further.");
+
+            hireModal.classList.remove('hidden');
+        }
+
+        function closeHireModal() {
+            hireModal.classList.add('hidden');
+        }
+
+        // Close Modal on Backdrop Click
+        window.addEventListener('click', (e) => {
+            if (e.target === hireModal) {
+                closeHireModal();
+            }
+        });
+    </script>
+</body>
+</html>
